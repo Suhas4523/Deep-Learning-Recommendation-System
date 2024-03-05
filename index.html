@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .label {
+            margin-top: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <h1>Movie Recommendation System</h1>
+        <form action="/predict" method="post">
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" name="user_id" required>
+
+            <label for="movie_name">Movie Name:</label>
+            <input type="text" id="movie_name" name="movie_name" required>
+
+            <button type="submit">Get Recommendation</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">Recommended Rating: {{ prediction }}</div>
+        <div class="label">Prediction Label: {{ label }}</div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

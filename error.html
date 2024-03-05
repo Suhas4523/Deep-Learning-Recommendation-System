@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System - Error</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #e74c3c; /* Red color for error messages */
+        }
+
+        p {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .back-link {
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="error">Error</h1>
+        <p class="error">{{ message }}</p>
+
+        <div class="back-link">
+            <a href="/">Go back to Home</a>
+        </div>
+    </div>
+</body>
+
+</html>
